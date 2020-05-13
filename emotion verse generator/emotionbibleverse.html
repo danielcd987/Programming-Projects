@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>Emotion Verse Recomendation</TITLE>
+<meta charset="UTF-8" />
+<META name="author" description="Dan DeCarlo"/>
+<SCRIPT>
+    //the purpose of this function is to get the emotion chosen and then display bible verses that relate to that emotion.
+    function emotion(){
+        var feel = document.getElementById("emotion");
+        var anger = document.getElementById("anger");
+            if(anger.value == "anger"){
+                alert("works");
+            }
+}//emotion
+
+
+var angry = document.getElementById("anger").addEventListener("click", anger_function);
+
+function anger_function() {
+ var display = angry.innerHTML = "John 3 : 16";
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+    Chose an emotion and verses will appear to help deal with that specific emotion.
+        <select>
+            <option id = "anger" value = "anger">Anger</option>
+            <option id = "depression">Depression</option>
+            <option id = "lust">Lust</option>
+            <option id = "pride">Pride</option>
+            <option id = "guilt">Guilt/shame</option>
+            <option id = "joyful">Joyful</option>
+            <option id = "righteous">Righteous</option>
+            <option id = "kind">Kind</option>
+            <option id = "loving">Loving</option> 
+        </select> <br>
+        <button onClick = "emotion()">Submit</button>
+        <p id="anger">Anger.</p>  
+</BODY>
+
+</HTML>

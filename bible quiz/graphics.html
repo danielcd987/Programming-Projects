@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>graphics example page</TITLE>
+<meta charset="UTF-8" />
+<META name="author" description="Dan DeCarlo"/>
+<SCRIPT type = "text/javascript">
+    function main(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d"); //the context in this case 2d is a graphics command
+        ctx.beginPath();
+        ctx.strokeStyle = "#FFFF00"; //refrences color. Order goes from red,green,blue stroke also changes border
+        ctx.lineWidth = 50;
+        ctx.fillStyle = "#005090";
+        ctx.fillRect(0,0,499,299);
+        //ctx.penColor = "#000000"; //creates the border
+        ctx.stroke(); //creates border while fill fills the color shape
+        //for the triangle on page
+        ctx.lineWidth= 10;
+        ctx.strokeStyle = "#00FFFF";
+        ctx.beginPath();
+        ctx.moveTo(25,299);
+        ctx.lineTo(100,150);
+        ctx.lineTo(175,299);
+        ctx.moveTo(150,250);
+        ctx.lineTo(250,75);
+        ctx.lineTo(350,299);
+        ctx.stroke();
+
+//circles
+ctx.fillStyle = "#FFDF00";
+ctx.beginPath();
+ctx.arc(400,75,40,0,2*Math.PI);
+ctx.stroke = "#FF0000";
+ctx.fill();
+
+
+    }//main
+</SCRIPT>
+</HEAD>
+<BODY onLoad = "main()">
+<canvas id  = "canvas" width = "500" height = "300"></canvas>
+
+
+</BODY>
+</HTML>

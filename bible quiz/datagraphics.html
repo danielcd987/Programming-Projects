@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>graphics example page</TITLE>
+<meta charset="UTF-8" />
+<META name="author" description="Dan DeCarlo"/>
+<SCRIPT type = "text/javascript">
+var data = [];
+data.push(5.0,4.5,0,6.7,26.2,0,0,3.2);
+    function main(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d"); //the context in this case 2d is a graphics command
+        var width = ctx.width;
+        var height = ctx.height;
+        var x_scale = Math.floor(width / (1+data.length));
+        var y_scale = Math.floor(height/ 30);
+
+        ctx.fillStyle="#000000";
+        ctx.fillRect(0,0,width,height);
+        ctx.strokeStyle = "#007F00";
+        ctx.linewidth = 3;
+        ctx.font= "15px Arial";
+        ctx.beginPath();
+        for(var i = 0; i<data.length;i++){
+            var thisx = (i+1)*x_scale;
+            var thisy =  height -Math.floor(data[i]*y_scale);
+            if(i==0) ctx.moveTo(thisx,thisy);
+            else ctx.lineTo(thisx,thisy);
+            ctx.strokeStyle = "#FFFFFF";
+        
+            ctx.fillText(thisx-30,thisy-Math.floor(y_scale/4));
+        }//each value of array
+        ctx.Stroke();
+    }//main
+</SCRIPT>
+</HEAD>
+<BODY onLoad = "main()">
+<canvas id  = "canvas" width = "500" height = "300"></canvas>
+
+
+</BODY>
+</HTML>
